@@ -12,6 +12,8 @@
     background-color: var(--color-purple-100);
     color: var(--color-white-fixed);
 
+    border-bottom: solid 2px rgba(0, 0, 0, 0.5);
+
     width: 100%;
     height: 50px;
 }
@@ -20,12 +22,12 @@
     margin-top: 25px;
 
     padding: 25px 20px 40px 20px;
-    
+    max-width: max-content;
     overflow-x: auto;
 }
 
 .companie{
-    width:  250px;
+    min-width:  250px;
     height: 225px;
 
     background-color: var(--color-white-fixed);
@@ -49,6 +51,7 @@
     .companie_section{
         border: solid 1px var(--color-purple-100);
         border-radius: 255px;
+        bottom: 1px solid rgba(0, 0, 0,);
 
         color: var(--color-purple-100);
 
@@ -77,4 +80,13 @@
 .appear{
     display: flex;
     position: absolute;
+}
+
+.filter-appear{
+    display: block;
+    position: absolute;
+}
+
+.inverted{
+   transform: rotate(180deg);
 }

@@ -43,4 +43,24 @@ async function registerRequest(body){
     }
 }
 
-export {loginRequest, registerRequest}
+async function getAllCompanies(){
+    try{
+        const request = await fetch(baseURL + "companies", {
+            method: "GET",
+            headers: {"Content-Type": "application/json"}
+        })
+        const response = await request.json();
+        return response
+    }catch(err){
+        console.log("voce errou algo, burro!")
+        console.log(err)
+    }
+}
+
+
+// async function filterCompanie(id){
+
+// }
+
+
+export {loginRequest, registerRequest, getAllCompanies}
