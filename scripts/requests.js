@@ -1,3 +1,4 @@
+import {modal} from "./modal.js";
 
 const baseURL = "http://localhost:6278/";
 
@@ -12,9 +13,11 @@ async function loginRequest(body){
         })
         if(request.ok){
             const response = await request.json()
-
-            localStorage.setItem("user", response.token)
-            window.location.replace("/pages/post/index.html")
+            localStorage.setItem("user", response.token);
+            modal("Sucesso!", "Login feito com sucesso!")
+            setTimeout( 
+                window.location.replace("/pages/post/index.html"),4000
+            )  
         }
     } catch(err){
         console.log("Não foi possível concluir sua requisição")
@@ -57,10 +60,18 @@ async function getAllCompanies(){
     }
 }
 
+async function filterCompanie(section){
+    try{
+        const request = await fetch(baseURL + "companies/" + `${section}`,{
+            method: "GET",
+            headers: {"Content-Type": "application/json"}
+        })
+        const response = await request.json();
+        return response;
+    }catch(err){
+        console.log("errou algo, burro!")
+        console.log(err)
+    }
+}
 
-// async function filterCompanie(id){
-
-// }
-
-
-export {loginRequest, registerRequest, getAllCompanies}
+export {loginRequest, registerRequest, getAllCompanies, filterCompanie}

@@ -28,22 +28,20 @@
         <main>
             <div class="select-section-container">
                 <div class="companies-section">
-                    <div class="selecSect-header flex s-around a-center">
-                        <h3 class="header_content">Selecionar Setor</h3>
+                    <div class="selecSect-header flex s-around a-center"> 
+                        <select id="filterSelect" class="filters">
+                            <option id="default" value="default">Selecionar Setor</option>
+                            <option id="alimenticio" value="Alimenticio">Alimentício</option>
+                            <option id="varejo" value="Varejo">Varejo</option>
+                            <option id="textil" value="Textil">Textil</option>
+                            <option id="manufatura" value="Manufatura">Manufatura</option>
+                            <option id="aeroespacial" value="Aeroespacial">Aeroespacial</option>
+                            <option id="automotiva" value="Automotiva">Automotiva</option>
+                            <option id="ti" value="TI">TI</option>
+                            <option id="atacado" value="Atacado">Atacado</option>
+                        </select>
                         <img src="/img/Arrow 2.png" alt="" class="ss_img">
                     </div>
-                    <div class="filter-container">
-                        <ul class="filters">
-                            <li class="filter_button">Alimenticio</li>
-                            <li class="filter_button">Varejo</li>
-                            <li class="filter_button">Textil</li>
-                            <li class="filter_button">Manufatura</li>
-                            <li class="filter_button">Aeroespacial</li>
-                            <li class="filter_button">Automotiva</li>
-                            <li class="filter_button">TI</li>
-                            <li class="filter_button">Atacado</li>
-                        </ul>
-                    </div>     
                     <ul class="companies_list flex" id="companieContainer"></ul>
                 </div>
             </div>

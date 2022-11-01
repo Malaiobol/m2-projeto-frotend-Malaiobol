@@ -1,5 +1,5 @@
 import { toLogin, toRegister } from "../../scripts/changeWindow.js";
-import { getAllCompanies } from "../../scripts/requests.js";
+import { getAllCompanies, filterCompanie } from "../../scripts/requests.js";
 
 function openMenu(){
     const container = document.querySelector(".drop-down-container");
@@ -15,19 +15,12 @@ function openMenu(){
     })
 } 
 
-function openFilter(){
-    const arrow = document.querySelector(".selecSect-header");
-    const img = document.querySelector(".ss_img");
-    const filterContainer = document.querySelector(".filter-container");
-    arrow.addEventListener("click", ()=>{
-        filterContainer.classList.toggle("filter-appear");
-        img.classList.toggle("inverted")
-    })
-}
 
-async function renderAllCompanies(){
-    const companies = await getAllCompanies();
+
+function renderCompanies(companies){
     const companiesContainer = document.getElementById("companieContainer");
+   
+    companiesContainer.innerHTML = "";
 
     companies.forEach((comp) => {
         const compBox = document.createElement("li");
@@ -39,7 +32,7 @@ async function renderAllCompanies(){
 
         const compTimer = document.createElement("p");
         compTimer.classList.add("companie_timer");
-        compTimer.innerText = `${comp.opening_hours} Horas`;
+        compTimer.innerText = `Abre ${comp.opening_hours} Horas`;
 
         const compSection = document.createElement("p");
         compSection.classList.add("companie_section");
@@ -49,8 +42,31 @@ async function renderAllCompanies(){
         companiesContainer.append(compBox);
     });
 }
-renderAllCompanies();
-openFilter();
+
+async function defaultRender(){
+    const companies = await getAllCompanies();
+    renderCompanies(companies);
+}
+
+function filterCompanies(){
+    const filter = document.getElementById("filterSelect");
+
+    filter.addEventListener("change", async ()=> {
+        const selectedCompanie = filter.value;
+        console.log(filter.value);
+        
+        if(selectedCompanie === "default"){
+            defaultRender()
+        } else {
+            const companies = await filterCompanie(selectedCompanie);
+            renderCompanies(companies);  
+        }
+    })
+}
+
+defaultRender();
+filterCompanies();
+
 openMenu();
 toLogin();
 toRegister();

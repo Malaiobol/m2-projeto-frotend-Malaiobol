@@ -9,7 +9,7 @@ function resgisterTry(){
         const body = {};
 
         elements.forEach(elem => {
-            if(elem.tagName === "INPUT" && elem.value !== ""){
+            if(elem.tagName === "INPUT" && elem.value !== "" || elem.tagName === "SELECT" && elem.value !== ""){
                 body[elem.id] = elem.value
             }
         })

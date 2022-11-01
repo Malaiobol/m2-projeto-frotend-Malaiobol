@@ -13,7 +13,6 @@ function loginTry(){
                 body[elem.id] = elem.value
             }   
         })
-        console.log(body); 
         await loginRequest(body);
     })
 }
