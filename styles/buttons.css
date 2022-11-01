@@ -1,0 +1,56 @@
+.white_button{
+    align-items: center;
+
+    border: solid 2px var(--color-purple-100);
+    color: var(--color-purple-100);
+
+    font-weight: 700;
+    font-size: var(--font-size-4);
+    line-height: 20px;
+}
+
+.white_button:hover{
+    background-color: var(--color-gray-600);
+}
+
+.purple_button{
+    align-items: center;
+
+    border: solid 2px var(--color-purple-100);
+    background-color: var(--color-purple-100);
+
+    color: var(--color-white-fixed);
+
+    font-weight: 700;
+    font-size: var(--font-size-4);
+    line-height: 20px;
+}
+
+.purple_button:hover{
+    background-color: var(--color-purple-200);
+}
+
+.green_button{
+    align-items: center;
+
+    border: solid 2px var(--buttons-container100);
+    background-color: var(--color-brand-200);
+
+    font-weight: 700;
+    font-size: var(--font-size-4);
+    line-height: 20px;
+}
+
+.red_button{
+    align-items: center;
+
+    border: solid 2px var(--color-red-100);
+    color: var(--color-red-100);
+
+    font-weight: 700;
+    font-size: var(--font-size-4);
+    line-height: 20px;
+}
+
+
+

@@ -1,0 +1,65 @@
+.register-container{
+    padding: 20px;
+}
+
+.register-container{
+    position: absolute;
+    top: 130px;
+
+    height: 70vh;
+    width: 100%;
+
+    background-color: var(--background-modal);
+}
+
+.header_register{
+    margin-top: 40px;
+
+    font-size: var(--font-size-2);
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.inputs-container{
+    margin-top: 28px;
+}
+
+.inputs-container > input{
+    margin-bottom: 13px;
+
+    width: 100%;
+    height: 50px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    padding: 15px;
+}
+
+.inputs-container > input::placeholder{
+    font-weight: 400;
+    font-size: var(--font-size-4);
+    line-height: 22px;
+}
+
+.stacks{
+    margin-bottom: 13px;
+
+    width: 100%;
+    height: 50px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    padding: 15px; 
+}
+
+.buttons-container{
+    margin-top: 35px;
+}
+
+.buttons-container > button{
+    margin-bottom: 10px;
+
+    width: 100%;
+    height: 50px;
+}
+
