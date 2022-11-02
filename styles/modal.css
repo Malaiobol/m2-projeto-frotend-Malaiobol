@@ -1,0 +1,12 @@
+.modal-background{
+    position: absolute;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(70, 35, 167, 0.13);
+}
+
+.modal-body{
+    margin: auto 25%;
+}

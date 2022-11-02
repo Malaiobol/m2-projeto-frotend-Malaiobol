@@ -1,4 +1,5 @@
-import {modal} from "./modal.js";
+import {modalAlert} from "./modal.js";
+import { setLocalStorage } from "./localStorage.js";
 
 const baseURL = "http://localhost:6278/";
 
@@ -14,14 +15,13 @@ async function loginRequest(body){
         if(request.ok){
             const response = await request.json()
             localStorage.setItem("user", response.token);
-            modal("Sucesso!", "Login feito com sucesso!")
+            modalAlert("Sucesso!", "Login feito com sucesso!")
             setTimeout( 
                 window.location.replace("/pages/post/index.html"),4000
             )  
         }
     } catch(err){
-        console.log("Não foi possível concluir sua requisição")
-        console.log(err)
+        console.log("Não foi possível concluir sua requisição", err)
     }
 }
 
@@ -55,23 +55,40 @@ async function getAllCompanies(){
         const response = await request.json();
         return response
     }catch(err){
-        console.log("voce errou algo, burro!")
-        console.log(err)
+        console.log("voce errou algo, burro!", err)
     }
 }
 
 async function filterCompanie(section){
+    const localStorage = localStorage.getItem("user");
     try{
         const request = await fetch(baseURL + "companies/" + `${section}`,{
             method: "GET",
-            headers: {"Content-Type": "application/json"}
+            headers: {"Content-Type": "application/json"},
+            Authorization: `Bearer ${localStorage}`
         })
         const response = await request.json();
         return response;
     }catch(err){
-        console.log("errou algo, burro!")
-        console.log(err)
+        console.log("errou algo, burro!", err)
     }
 }
 
-export {loginRequest, registerRequest, getAllCompanies, filterCompanie}
+async function getUserInfo(){
+    const token = setLocalStorage();
+    try{
+        const request = await fetch(baseURL + "users/profile", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        const response = await request.json();
+        return response;
+    }catch(err){
+        console.log("algo deu errado!", err)
+    }
+}
+
+export {loginRequest, registerRequest, getAllCompanies, filterCompanie, getUserInfo}

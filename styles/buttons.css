@@ -3,6 +3,7 @@
 
     border: solid 2px var(--color-purple-100);
     color: var(--color-purple-100);
+    background-color: var(--color-white-fixed);
 
     font-weight: 700;
     font-size: var(--font-size-4);

@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/displays.css">
+    <link rel="stylesheet" href="/styles/containers.css">
+    <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="/styles/inputs.css">
+    <link rel="stylesheet" href="/styles/buttons.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+    <link rel="stylesheet" href="index.css">
     <title>Living</title>
 </head>
 <body>
-    <main></main>
+    <header class="header-container flex j-around">
+        <div class="logo_box flex a-center">
+            <div class="logo_img"></div>
+            <h1 class="page_logo">Kenzie Empresas</h1>
+        </div>
+        <button class="return_button white_button">Logout</button> 
+    </header>
+    <main>
+        <section class="user-container block">
+            <h3 class="user_name"></h3>
+            <ul class="user_stack flex a-center j-around">
+                <li class="user_email"></li>
+                <li class="user_professional_level"></li>
+                <li class="user_preference"></li>
+                <img src="/img/Vector - PEN.png" class="edit_profile">
+            </ul>
+        </section>
+        <section class="company-container">
+            <h4 class="alert">Você ainda não foi contratado</h4>
+        </section>
+    </main>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
+
