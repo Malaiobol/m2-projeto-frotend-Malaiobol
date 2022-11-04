@@ -1,34 +1,22 @@
-import {editModal} from "../../scripts/modal.js"
-import {getUserInfo} from "../../scripts/requests.js"
+import {verifyLogin} from "../../scripts/login.js"
+import {toHome} from "../../scripts/changeWindow.js"
+import {renderProfile, renderCompany, renderCoWorkers} from "../../scripts/renderUser.js"
+import {openModal} from "../../scripts/modal.js";
+import {editUser} from "../../scripts/forms.js"
 
-function editProfile(){
-    const editButton = document.querySelector(".edit_profile");
-    const backgroundModal = document.querySelector(".modal-background");
+function editUserProfile(){
+    const editImg = document.querySelector(".edit_profile");
 
-    editButton.addEventListener("click", ()=>{
-        editModal();
+    editImg.addEventListener("click", async ()=>{
+        openModal(await editUser())
     })
 }
 
-async function renderProfile(){
-    const userStack = await getUserInfo();
 
-    const userName = document.querySelector(".user_name");
-    userName.innerText = userStack.username;
 
-    const userEmail = document.querySelector(".user_email");
-    userEmail.innerText = userStack.email;
-
-    const userProfLevel = document.querySelector(".user_professional_level");
-    userProfLevel.innerText = userStack.professional_level
-
-    // const userPreference = document.querySelector(".user_preference");
-    // userPreference
-}
-
-async function renderComp(){
-    
-}
-
+verifyLogin();
+toHome();
 renderProfile();
-editProfile();
+renderCompany();
+renderCoWorkers(); 
+editUserProfile();

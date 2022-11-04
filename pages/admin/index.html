@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/buttons.css">
     <link rel="stylesheet" href="/styles/modal.css">
     <link rel="stylesheet" href="index.css">
-    <title>Living</title>
+    <title>Admin Page</title>
 </head>
 <body>
     <header class="header-container flex j-around">
@@ -22,20 +22,21 @@
         <button class="return_button white_button">Logout</button> 
     </header>
     <main>
-        <section class="user-container block">
-            <h3 class="user_name"></h3>
-            <ul class="user_stack flex a-center j-around">
-                <li class="user_email"></li>
-                <li class="user_professional_level"></li>
-                <li class="user_preference"></li>
-                <img src="/img/Vector - PEN.png" class="edit_profile">
-            </ul>
+        <section class="department-container">
+            <div class="department-header flex j-around">
+                <h3 class="container_name">Departamentos</h3>
+                <select name="SelectCompanie" id="selectCompanie">
+                    <option value="default">Selecionar Empresa</option>
+                </select>
+                <button class="create_companie" id="createDepartment">+ Criar</button>
+            </div>
+            <ul class="departments-list flex f-wrap"></ul>
         </section>
-        <section class="company-container">
-            <ul class="coworkers-list flex f-wrap j-around"></ul>
+        <section class="users-container">
+            <h3 class="container_name">Usuários Cadastrados</h3>
+            <ul class="users-list flex f-wrap"></ul>
         </section>
     </main>
     <script type="module" src="index.js"></script>
 </body>
 </html>
-

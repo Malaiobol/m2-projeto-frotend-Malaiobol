@@ -15,8 +15,6 @@ function openMenu(){
     })
 } 
 
-
-
 function renderCompanies(companies){
     const companiesContainer = document.getElementById("companieContainer");
    
@@ -53,7 +51,6 @@ function filterCompanies(){
 
     filter.addEventListener("change", async ()=> {
         const selectedCompanie = filter.value;
-        console.log(filter.value);
         
         if(selectedCompanie === "default"){
             defaultRender()
