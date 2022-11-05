@@ -90,3 +90,52 @@
 .inverted{
    transform: rotate(180deg);
 }
+@media(min-width: 700px) {
+    .dropdown_img{
+        display: none;
+    }
+    .drop-down-container{
+        position: absolute;
+        height: max-content;
+        top: 25px;
+        right: 0px;
+        width: 500px;
+        display: flex;
+
+        box-shadow: none;
+    }
+    .img-container{
+        width:  550px;
+        height: 743px;
+    
+        background-image: url(../../img/Rectangle\ 6.png);
+        margin: 40px 40px 0px 15%;
+    }
+    .select-section-container{
+        width: 650px;
+        max-height: 450px;
+        padding: 10px;
+    }
+    .companies_list{
+        overflow-y: auto;
+        display: block;
+        min-width: 100%;
+        max-height: 660px;
+    }
+    .companies-section{
+        padding-bottom: 10px;
+    }
+    .companie{
+        height: 150px;
+        width: 100%;
+    }
+    .companie_title{
+        margin-top: 15px;
+    }
+    .companie_timer{    
+        margin-top: 15px;
+    }
+    .companie_section{
+        margin-top: 15px;
+    }
+}

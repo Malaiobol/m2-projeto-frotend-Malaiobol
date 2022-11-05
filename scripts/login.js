@@ -1,5 +1,5 @@
-import {loginRequest} from "./requests.js";
-import { getLocalStorage } from "./localStorage.js";
+import {loginRequest, verifyUser} from "./requests.js";
+import {getLocalStorage} from "./localStorage.js";
 
 function loginTry(){
     const form = document.querySelector(".login-container");
@@ -18,11 +18,22 @@ function loginTry(){
     })
 }
 
-function verifyLogin(){
-    const token = getLocalStorage()
-    if(token === ""){
-        window.location.replace("/pages/index.html")
+async function verifyUserType(){
+    const userLogged = getLocalStorage();
+    const validateToken = await verifyUser(userLogged);
+    if(validateToken === ""){
+        window.location.replace("/pages/index.html");
     }
 }
 
-export {loginTry, verifyLogin};
+function logOut(){
+    const logOutButton = document.querySelector(".return_button");
+
+    logOutButton.addEventListener("click", ()=>{
+        localStorage.removeItem("user");
+        window.location.replace("/pages/index.html");
+    })
+}
+
+
+export {loginTry, verifyUserType, logOut};

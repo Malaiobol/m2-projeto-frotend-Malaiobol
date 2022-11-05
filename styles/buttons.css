@@ -11,7 +11,8 @@
 }
 
 .white_button:hover{
-    background-color: var(--color-gray-600);
+    cursor: pointer;
+    background-color: var(--color-grey-600);
 }
 
 .purple_button{
@@ -28,6 +29,7 @@
 }
 
 .purple_button:hover{
+    cursor: pointer;
     background-color: var(--color-purple-200);
 }
 

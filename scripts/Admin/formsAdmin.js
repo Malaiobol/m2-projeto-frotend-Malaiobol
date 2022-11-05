@@ -1,49 +1,24 @@
-import { 
-        getAllCompanies, createDepartment, updatePost, contractUser, 
-        deleteDepartment, getDontWorkingUsers, dismissUser,
-        editUserAdmin, deleteUserAdmin
-    } from "./requests.js";
+import {
+    createDepartmentRequest, deleteDepartmentRequest, 
+    updateDescription, contractUser, dismissUser, 
+    getFreeUsers,deleteUserAdm, editUserAdm, 
+} from "./requestsAdmin.js";
 
-async function editUser(){
+import { getAllCompanies} from "../requests.js"
+
+async function createDepartment(){
     const form = document.createElement("form");
-    form.classList.add("modal-form")
-    form.insertAdjacentHTML("afterbegin",  ` 
-        <h2 class="modal_title">Editar Perfil</h2>
-        <input type="text" class="default_input" placeholder="Seu nome" name="username"></input>
-        <input type="text" class="default_input" placeholder="Seu email" name="email"></input>
-        <input type="text" class="default_input" placeholder="Sua senha" name="password"></input>
-        <button type="submit" class="purple_button">Editar Perfil</button>
-    `)
 
-    form.addEventListener("submit", (e)=>{
-        e.preventDefault();
-        const body = {};
-
-        elements.forEach(({name, value})=>{
-            if(name){
-                body[name] = value
-            } 
-        })
-        createDepartment(body);
-        backGroundModal.remove();
-        // window.location.reload();
-    })
-
-    return form
-}
-
-async function generateDepartment(){
-    const form = document.createElement("form");
     form.classList.add("modal-form")
     form.insertAdjacentHTML("afterbegin",  ` 
         <h3 class="modal_title">Criar Departamento</h3>
         <div class="inputs-container">
-            <input type="text" name="name" placeholder="Nome do departamento" id="name" required>
-            <input type="text" name="description" placeholder="Descrição" id="description" required>
-            <select class="companies" name="company_uuid" id="company_uuid" required>
+            <input type="text" class="default_input" name="name" placeholder="Nome do departamento" id="name" required>
+            <input type="text" class="default_input" name="description" placeholder="Descrição" id="description" required>
+            <select class="companies" class="default_input" name="company_uuid" id="company_uuid" required>
                 <option value="">Selecionar Empresa</option>
             </select>
-            <button type="submit" class="createDepartment">Criar Departamento</button>
+            <button type="submit" class="createDepartment purple_button">Criar Departamento</button>
         </div>
     `)
 
@@ -68,9 +43,11 @@ async function generateDepartment(){
                 body[name] = value
             } 
         })
-        createDepartment(body);
-        backGroundModal.remove();
-        window.location.reload();
+        await  createDepartmentRequest(body);
+        setTimeout(()=>{
+            window.location.reload()
+        }, 4000)
+        
     })
     return form
 }
@@ -81,7 +58,7 @@ async function editDepartment({description, uuid}){
     form.insertAdjacentHTML("afterbegin",  ` 
         <h2 class="modal_title">Editar Departamento</h2>
         <div class="content-container">
-            <input  type="text"   class="input_area" name="description" value="${description}" required>
+            <textarea class="default_input area_input" name="description"required>${description}</textarea>
             <button type="submit" class="save_button purple_button">Salvar Alterações</button>
         </div>
     `)
@@ -90,8 +67,6 @@ async function editDepartment({description, uuid}){
         e.preventDefault();
 
         const elements = [...form.elements]
-        console.log(elements)
-        const backGroundModal = document.querySelector(".background-modal");
         const body = {};
 
         elements.forEach(({name, value})=>{
@@ -100,9 +75,10 @@ async function editDepartment({description, uuid}){
             }
            
         })
-        backGroundModal.remove();
-        await updatePost(body, uuid); 
-        window.location.reload();
+        await updateDescription(body, uuid); 
+        setTimeout(()=>{
+            window.location.reload();
+        }, 4000)
     })
     return form
 }
@@ -120,59 +96,42 @@ async function openDepartment(companie){
             <select name="userName" id="" class="users">
                 <option value="">Selecionar usuário</option>
             </select>
-            <button class="green_button" id="contractButton">Contratar</button>
+            <button class="green_button" type="submit" id="contractButton">Contratar</button>
         </div>
-        <ul class="users-list">
             <li class="user">
                 <p class="user_name"></p>
                 <p class="user_professional_level"></p>
                 <p class="style_work"></p>
                 <button class="white_button" id="turnOffButton">Desligar</button>
             </li>
-        </ul>
     `)
-
+    const usersList = document.createElement("ul");
+    usersList.classList.add("users-list");
     const elements =  [...form.elements]
     const select   = elements[0];
-    const users = await getDontWorkingUsers();
-    
+    const users = await getFreeUsers();
     users.forEach(user =>{
-        console.log(user);
         const option = document.createElement("option");
         option.innerText = user.username;
         option.value = user.uuid;
         select.append(option);
     })
-
     const contractButton = elements[1];
+    console.log(contractButton);
     contractButton.addEventListener("submit", async (e)=>{
         e.preventDefault();
-        
-        const backGroundModal = document.querySelector(".background-modal"); 
         let body = {};
-
         body = {
             user_uuid: `${select.value}`,
             department_uuid: `${companie.uuid}`
         }
-        
-        backGroundModal.remove();
+        console.log(body)
         await contractUser(body); 
     })
-
-    const turnOffButton = document.getElementById("turnOffButton")
-    contractButton.addEventListener("submit", async (e)=>{
-        e.preventDefault();
-        const backGroundModal = document.querySelector(".background-modal"); 
-
-        backGroundModal.remove();
-        await dismissUser(select.value); 
-    })
-
     return form
 }
 
-async function deleteDepartmentForm(companie){
+async function deleteDepartment(companie){
     const form = document.createElement("form");
     form.classList.add("modal-form");
     form.insertAdjacentHTML("afterbegin", `
@@ -184,9 +143,11 @@ async function deleteDepartmentForm(companie){
 
     form.addEventListener("submit", async (e)=>{
         e.preventDefault();
-        await deleteDepartment(companie.uuid);
+        await deleteDepartmentRequest(companie.uuid);
 
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload();
+        }, 4000);
     })
     return form
 }
@@ -220,7 +181,7 @@ function openEditUser(userID){
                 body[name] = value;
             }
         })
-        await editUserAdmin(userID, body);
+        await editUserAdm(userID, body);
 
     })
     return form
@@ -230,18 +191,17 @@ function openDeleteUser(user){
     const form = document.createElement("form");
     form.classList.add("modal-form");
     form.insertAdjacentHTML("afterbegin", `
-        <h3>Realmente deseja remover o usuário ${user.username}?</h3>
-        <button type="submit">Deletar</button>
+        <h3 class="modal_message">Realmente deseja remover o usuário ${user.username}?</h3>
+        <button type="submit" class="green_button deleteButton">Deletar</button>
     `)
 
     form.addEventListener("submit", async ()=>{
-        await deleteUserAdmin(user.uuid);
+        await deleteUserAdm(user.uuid);
     })
     return form
 }
 
 export {
-    generateDepartment, editDepartment, openDepartment, 
-    deleteDepartmentForm, openEditUser, openDeleteUser,
-    editUser,
-};
+    createDepartment, editDepartment, openDepartment,
+    deleteDepartment, openEditUser, openDeleteUser,
+}

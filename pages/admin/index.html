@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/globalStyles.css">
     <link rel="stylesheet" href="/styles/inputs.css">
     <link rel="stylesheet" href="/styles/buttons.css">
+    <link rel="stylesheet" href="/styles/toast.css">
     <link rel="stylesheet" href="/styles/modal.css">
     <link rel="stylesheet" href="index.css">
     <title>Admin Page</title>
@@ -23,17 +24,20 @@
     </header>
     <main>
         <section class="department-container">
-            <div class="department-header flex j-around">
+            <div class="company_header"></div>
+            <div class="department-header flex a-center j-center">
                 <h3 class="container_name">Departamentos</h3>
-                <select name="SelectCompanie" id="selectCompanie">
+                <select name="SelectCompanie" id="selectCompanie" class="selectCompanie">
                     <option value="default">Selecionar Empresa</option>
                 </select>
-                <button class="create_companie" id="createDepartment">+ Criar</button>
+                <button class="create_companie purple_button" id="createDepartment">+ Criar</button>
             </div>
             <ul class="departments-list flex f-wrap"></ul>
         </section>
         <section class="users-container">
-            <h3 class="container_name">Usuários Cadastrados</h3>
+            <div class="department-header flex j-center">
+                <h3 class="container_name">Usuários Cadastrados</h3>
+            </div> 
             <ul class="users-list flex f-wrap"></ul>
         </section>
     </main>

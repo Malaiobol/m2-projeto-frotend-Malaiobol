@@ -69,3 +69,19 @@
     height: 50px;
 }
 
+@media(min-width: 700px) {
+    .dropdown_img{
+        display: none;
+    }
+    .main-container{
+        width: 100%;
+        background-position: center top;
+        background-image: url(../../img/Rectangle\ 8.png);
+    }
+    .login-container{
+        margin-left: 40%;
+
+        width: 500px;
+        height: 550px;
+    }
+}

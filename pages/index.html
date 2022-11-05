@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/globalStyles.css">
     <link rel="stylesheet" href="/styles/inputs.css">
     <link rel="stylesheet" href="/styles/buttons.css">
+    <link rel="stylesheet" href="/styles/toast.css">
     <link rel="stylesheet" href="/pages/home/index.css">
     <title>Kenzie Empresas - HomePage</title>
 </head>
@@ -25,7 +26,8 @@
                     <button class="register_button purple_button">Cadastro</button>
                 </div>
         </header>
-        <main>
+        <main class="flex">
+            <div class="img-container"></div>
             <div class="select-section-container">
                 <div class="companies-section">
                     <div class="selecSect-header flex s-around a-center"> 
@@ -40,7 +42,6 @@
                             <option id="ti" value="TI">TI</option>
                             <option id="atacado" value="Atacado">Atacado</option>
                         </select>
-                        <img src="/img/Arrow 2.png" alt="" class="ss_img">
                     </div>
                     <ul class="companies_list flex" id="companieContainer"></ul>
                 </div>

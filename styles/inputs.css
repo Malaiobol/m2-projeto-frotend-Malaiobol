@@ -2,3 +2,18 @@
     background-position: center top;
     background-image: URL("/img/Rectangle 7.png");
 }
+
+select{
+    width: 300px;
+    height: max-content;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: url(../img/Arrow\ 2.png) no-repeat center right var(--color-purple-100);
+
+    color: var(--color-white-fixed);
+
+    border: none;
+    font-size: var(--font-size-3);
+}

@@ -1,6 +1,4 @@
-import {toHome} from "../../scripts/changeWindow.js"
-import {resgisterTry} from "../../scripts/register.js"
-
-
-resgisterTry();
+import { toHome } from "../../scripts/changeWindow.js";
+import { resgisterTry } from "../../scripts/register.js";
 toHome();
+resgisterTry();

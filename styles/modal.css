@@ -1,12 +1,91 @@
 .modal-background{
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 0px;
 
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(70, 35, 167, 0.13);
 }
 
-.modal-body{
-    margin: auto 25%;
+.modal-container{
+    position: relative;
+    bottom: 80%;
+
+    background-color: var(--color-white-fixed);
+    margin: 50% 35%;
+    height: 50%;
+    width: 35%;    
+    padding: 60px;
+    padding-left: 100px;
+}
+
+.close_modal{
+    position: relative;
+    top: 20px;
+    left: 85%;
+
+    font-size: var(--font-size-3);
+
+    background-color: transparent;
+    border: none;
+}
+
+.close_modal:hover{
+    cursor: pointer;
+}
+
+.modal_title{
+    font-size: var(--font-size-3);
+    font-weight: 700;
+    line-height: 20px;
+
+    margin-bottom: 15px;
+}
+
+.default_input{
+    width: 90%;
+    height: 50px;
+
+    margin-bottom: 10px;
+
+    padding: auto;
+}
+
+.default_input::placeholder{
+    padding-left: 15px;
+
+    font-size: var(--font-size-4);
+}
+
+.purple_button{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 90%;
+    height: 50px;
+}
+
+.white_button{
+    margin-top: 20px;
+    height: max-content;
+    padding: 10px;
+}
+
+.green_button{
+    color: var(--color-white-fixed);
+
+    margin-top: 20px;
+    height: max-content;
+    padding: 10px;
+}
+
+.area_input{
+    flex-wrap: wrap;
+
+    height: 250px;
+
+    font-size: var(--font-size-4);
+}
+
+.modal_message{
+    margin-top: 100px;
 }

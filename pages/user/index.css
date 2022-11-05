@@ -1,0 +1,118 @@
+.white_button{
+    height: max-content;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.user-container{
+    margin:5% 10%;
+
+    width: 80%;
+    height: 30%;
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+.user_name{
+    margin: 10px 1500px 0px 10px;
+}
+
+.user_email{
+    margin-left: 10px;
+}
+
+.user_professional_level{
+    margin-left: 9%;
+}
+
+.edit_profile{
+    margin-left: 15%;
+}
+
+.company_header{
+    background-color: var(--color-purple-100);
+    color: var(--color-white-fixed);
+
+    font-size: var(--font-size-2);
+    height: 80px;
+}
+
+.company_name{
+    margin-right: 30px;
+}
+
+.separator{
+    margin-right: 30px;
+    font-size: var(--font-size-1);
+}
+
+.coworkers-list{
+    padding: 60px;
+}
+
+.coworker{
+    padding: 13px;
+    margin-right: 20px;
+    margin-bottom: 13px;
+
+    width: 300px;
+    height: 75px;
+
+    background-color: var(--color-white-fixed);
+    border: solid 1px var(--color-purple-100);
+}
+
+.coworker_name{
+    font-weight: 700;
+    font-size: var(--font-size-4);
+}
+
+.coworker_prof_level{
+    margin-top: 14px;
+    font-weight: 400;
+}
+
+.coworker_dismiss{
+
+}
+
+.alert_message{
+    font-size: var(--font-size-1);
+    margin-top: 100px;
+}
+
+
+@media(min-width: 700px){
+    .user-container{
+        margin: 05% 21% 3% 21%;
+        width: 59%;
+    }
+    .user_name{
+        font-size: var(--font-size-2);
+        font-weight: 700;
+        line-height: 37px;
+        
+        margin: 10px 1500px 0px 50px;
+    }
+    .user_email{
+        font-size: var(--font-size-4);
+        font-weight: 400;
+        line-height: 23px;
+    }
+    .user_professional_level{
+        font-size: var(--font-size-4);
+        font-weight: 400;
+        line-height: 23px;
+    }
+    .white_button{
+        width: 150px;
+    }
+    .company-container{
+        width: 59%;
+        height: max-content;
+        
+        margin-left:21%;
+
+        background-color: var(--color-grey-600);
+    }
+}

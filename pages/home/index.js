@@ -1,6 +1,7 @@
 import { toLogin, toRegister } from "../../scripts/changeWindow.js";
 import { getAllCompanies, filterCompanie } from "../../scripts/requests.js";
 
+
 function openMenu(){
     const container = document.querySelector(".drop-down-container");
     const dropToast = document.querySelector(".dropdown_img");
@@ -42,7 +43,7 @@ function renderCompanies(companies){
 }
 
 async function defaultRender(){
-    const companies = await getAllCompanies();
+    const companies = await getAllCompanies()
     renderCompanies(companies);
 }
 
@@ -63,7 +64,8 @@ function filterCompanies(){
 
 defaultRender();
 filterCompanies();
-
 openMenu();
+
 toLogin();
 toRegister();
+

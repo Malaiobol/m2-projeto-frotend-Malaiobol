@@ -1,0 +1,160 @@
+.purple_button{
+    width: max-content;
+    padding: 0px 35px;
+}
+
+.users{
+    background: url(../../img/Vector\ -\ default.png) no-repeat center right transparent;
+    padding:10px;
+
+    color: var(--color-grey-300);
+    border: solid 1px var(--color-grey-300);
+}
+
+.selectCompanie{
+    border-radius: 15px;
+    padding: 0px 10px;
+    background: url(../../img/Vector\ -\ default.png) no-repeat center right transparent;
+
+    color: var(--color-grey-100);
+    border: 1px solid var(--color-grey-100);
+}
+
+.department-container{
+    margin-top: 100px;
+}
+
+.department-header{
+    gap: 250px   ;
+}
+
+.container_name{
+    font-size: var(--font-size-2);
+    font-weight: 700;
+}
+
+.departments-list{
+    padding: 50px;
+    background-color: var(--color-grey-600);
+
+    height: 400px;
+    width: 1344px;
+    margin: 0px 10%;
+
+    overflow-y: auto;
+}
+
+.department{
+    width: 490px;
+    height: 200px;    
+
+    padding: 15px 30px;
+
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+
+    background-color: var(--color-white-fixed);
+    border-bottom: 1px solid var(--color-purple-100);
+}
+
+.department_name{
+    font-weight: 700;
+    font-size: var(--font-size-3);
+    line-height: 25px;
+}
+
+.department_description{
+    margin-top: 10px;
+
+    font-size: var(--font-size-4);
+    font-weight: 400;
+}
+
+.companie_section{
+    margin-top: 10px;
+    font-size: var(--font-size-4);
+    font-weight: 400;
+}
+
+.buttons-container{
+    margin: 30px 0px;
+    margin-left: 150px;
+}
+
+.buttons-container > img{
+    margin-left: 15px;
+}
+
+.buttons-container > img:hover{
+    cursor: pointer;
+}
+
+.users-container{
+    margin-top: 40px;
+}
+
+.users-list{
+    padding: 50px;
+    background-color: var(--color-grey-600);
+
+    height: 400px;
+    width: 1344px;
+    margin: 0px 10%;
+
+    overflow-y: auto;
+}
+
+.user{
+    width: 490px;
+    height: 200px;    
+
+    padding: 15px 30px;
+
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+
+    background-color: var(--color-white-fixed);
+    border-bottom: 1px solid var(--color-purple-100);
+}
+
+.style_work{
+    margin-top: 10px;
+    font-size: var(--font-size-4);
+    font-weight: 400;
+}
+
+.user_name{
+    font-weight: 700;
+    font-size: var(--font-size-3);
+    line-height: 25px;
+}
+
+.user_professional_level{
+    margin-top: 10px;
+
+    font-size: var(--font-size-4);
+    font-weight: 400;
+}
+
+.divButtons{
+    margin: 30px 0px;
+    margin-left: 150px;
+}
+
+.divButtons > img{
+    margin-left: 15px;
+}
+
+.divButtons > img:hover{
+    cursor: pointer;
+}
+
+.deleteButton{
+    margin-left: 180px;
+}
+
+.deleteButton:hover{
+    cursor: pointer;
+}

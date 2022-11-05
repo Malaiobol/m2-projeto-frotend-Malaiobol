@@ -20,8 +20,7 @@ function toHome(){
     const returnButton = document.querySelector(".return_button");
     returnButton.addEventListener("click", ()=>{
         window.location.replace("/pages/index.html");
-        localStorage.removeItem("user") || localStorage.removeItem("admin");
     })
 }
 
-export { toLogin, toRegister, toHome,};
+export { toLogin, toRegister, toHome};
